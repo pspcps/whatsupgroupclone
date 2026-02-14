@@ -17,7 +17,7 @@ app.get("/test", (req, res) => {
   res.send("Server working")
 })
 
-app.use("/api/groups", groupRoutes)
+app.use("/groups", groupRoutes)
 
 app.use(errorHandler)
 
