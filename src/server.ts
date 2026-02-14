@@ -1,29 +1,24 @@
-import express, { Request, Response } from "express";
-import cors from "cors";
-// import dotenv from "dotenv"; // optional, only for local dev
-// import groupRoutes from "./routes/group.routes";
-// import { errorHandler } from "./middleware/error.middleware";
+import express from "express"
+import cors from "cors"
+import dotenv from "dotenv"
+// import serverless from "serverless-http"
 
-// dotenv.config(); // optional for local dev
+import groupRoutes from "./routes/group.routes"
+import { errorHandler } from "./middleware/error.middleware"
 
-const app = express();
+dotenv.config()
 
-app.use(cors());
-app.use(express.json());
+const app = express()
 
-// Minimal test route
-app.get("/", (req: Request, res: Response) => {
-  res.send("WORKING");
-});
+app.use(cors())
+app.use(express.json())
 
-app.get("/test", (req: Request, res: Response) => {
-  res.send("Server working");
-});
+app.get("/test", (req, res) => {
+  res.send("Server working")
+})
 
-// Example placeholder for your routes
-// app.use("/api/groups", groupRoutes);
+app.use("/api/groups", groupRoutes)
 
-// Example placeholder for error handler
-// app.use(errorHandler);
+app.use(errorHandler)
 
 export default app;
