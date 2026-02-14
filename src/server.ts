@@ -3,8 +3,8 @@ import cors from "cors"
 import dotenv from "dotenv"
 // import serverless from "serverless-http"
 
-import groupRoutes from "./routes/group.routes"
-import { errorHandler } from "./middleware/error.middleware"
+// import groupRoutes from "./routes/group.routes"
+// import { errorHandler } from "./middleware/error.middleware"
 
 dotenv.config()
 
@@ -21,8 +21,8 @@ app.get("/test", (req, res) => {
   res.send("Server working")
 })
 
-app.use("/api/groups", groupRoutes)
+// app.use("/api/groups", groupRoutes)
 
-app.use(errorHandler)
+// app.use(errorHandler)
 
 export default app;
